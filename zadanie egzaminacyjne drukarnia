@@ -1,0 +1,88 @@
+WITHOUT RADIO BUTTONONS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>drukarnia</title>
+</head>
+<body>
+     <h1>Zamówienie</h1>
+
+     Wybierz Obraz
+     <input type="file" id="plik" accept="image/png, image/jpeg" /> <br> <br>
+     Liczba Kopii: 
+     <input type="number" id="l_kopii"></input> <br> <br>
+      
+     <input type="radio" name="1" id="papier" value="1.5">Papier błyszczący</input>
+     <input type="radio" name="1" id="papier" value="2">Papier matowy</input> <br> <br>
+
+     <button id="dodaj">Dodaj do koszyka</button>
+
+
+     <div id="koszyk">
+          <h1>Koszyk</h1>
+
+     </div>
+     
+     <script>
+     const koszyk=document.querySelector("#koszyk");
+     const btn=document.querySelector("#dodaj");
+     
+     btn.addEventListener("click", function wyslij(){
+          let img = document.createElement("img")
+          img.src=URL.createObjectURL(document.querySelector("#plik").files[0])
+          document.querySelector("#koszyk").appendChild(img)
+     })
+     </script>
+</body>
+</html>
+
+WITH RADIOBUTTONS
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Drukarnia</title>
+</head>
+<body>
+     <h1>Zamówienie</h1>
+
+     Wybierz Obraz:
+     <input type="file" id="plik" accept="image/png, image/jpeg"></input><br><br>
+     Liczba Kopii: 
+     <input type="number" id="l_kopii"><br><br>
+      
+     <input type="radio" name="1" id="papier" value="1.5"> Papier błyszczący</input>
+     <input type="radio" name="1" id="papier" value="2"> Papier matowy</input><br><br>
+
+     <button id="dodaj">Dodaj do koszyka</button>
+
+     <div id="koszyk">
+          <h1>Koszyk</h1>
+
+     </div>
+     
+     <script>
+     const koszyk = document.querySelector("#koszyk");
+     const btn = document.querySelector("#dodaj");
+
+     btn.addEventListener("click", function(){
+          const ilosc = document.querySelector("#l_kopii").value;
+          const papier = document.querySelector("input[name='1']:checked");
+
+          let img = document.createElement("img");
+          img.src=URL.createObjectURL(document.querySelector("#plik").files[0]);
+          img.style.width = "100px";
+
+          let opis = document.createElement("p");
+          opis.innerHTML = `Kopie: ${ilosc}, Cena: ${papier.value*ilosc}`;
+
+          
+          koszyk.appendChild(img);
+          koszyk.appendChild(opis);
+     });
+     </script>
+</body>
+</html>

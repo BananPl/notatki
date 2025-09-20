@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="1">
+    <input type="number" id="2">
+    <button onclick="cos()">wyslij</button>
+    <script>
+        function cos(){
+           let a = parseInt(document.getElementById("1").value);
+           let b = parseInt(document.getElementById("2").value);
+           let c = Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+           alert(c)
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="1">
+    <input type="number" id="2">
+    <button onclick="cos()">wyslij</button>
+    <script>
+        function cos(){
+          let a= parseInt(document.getElementById("1".value))
+          let b= parseInt(document.getElementById("1".value))
+          alert(a+b)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <p>podaj szerokosc pomieszczenia</p>
+        <input id="szerokosc">
+        <p>podaj dlugosc pomieszczenia</p>
+        <input id="dlugosc"><br>
+        typ panelu<br>
+        <input type="radio" value="12" name="t">panele laminowane<br>
+        <input type="radio" value="14" name="t">panele winylowe<br>
+        <input type="radio" value="18" name="t">deska podlogowa<br>
+        <button type="submit" id="Oblicz">Oblicz</button>
+        <p id="wynik"></p>
+    </form>
+    <script>
+        const form= document.getElementById("form")
+        form.addEventListener("submit", (e)=>
+        { 
+            e.preventDefault()
+            const sz= document.getElementById("szerokosc").value
+            const dl= document.getElementById("dlugosc").value
+            const radio= document.querySelector("input[name=t]:checked").value
+            document.querySelector("#wynik").innerHTML="pole wynosi: " + (sz*dl) + "koszt wynosi: " + (sz*dl*radio);
+        })
+    </script>
+
+</body>
+</html>
